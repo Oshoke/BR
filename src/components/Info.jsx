@@ -1,24 +1,22 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 
 const Info = ({ userInfo }) => {
-  const { id } = useParams();
+  console.log(userInfo);
 
   return (
     <div className="info-card">
-      <h1>User ID: {id}</h1>
-      <ul>-name: {userInfo.name}</ul>
-      <ul>-username: {userInfo.username}</ul>
-      <ul>-email: {userInfo.email}</ul>
-      <ul>-phone: {userInfo.phone}</ul>
-      <ul>-company: {userInfo.company}</ul>
-      <ul>-website: {userInfo.website}</ul>
+      <ul>-name: {userInfo?.name}</ul>
+      <ul>-username: {userInfo?.username}</ul>
+      <ul>-email: {userInfo?.email}</ul>
+      <ul>-phone: {userInfo?.phone}</ul>
+      <ul>-company: {userInfo?.company?.name}</ul>
+      <ul>-website: {userInfo?.website}</ul>
       <ul>
         -address:
-        <li>street: {userInfo.address}</li>
-        <li>suite: {userInfo.address}</li>
-        <li>city: {userInfo.address}</li>
-        <li>zipcode: {userInfo.address}</li>
+        <li>street: {userInfo?.address?.street}</li>
+        <li>suite: {userInfo?.address?.suite}</li>
+        <li>city: {userInfo?.address?.city}</li>
+        <li>zipcode: {userInfo?.address?.zipcode}</li>
       </ul>
     </div>
   );
