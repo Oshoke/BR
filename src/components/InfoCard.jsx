@@ -13,6 +13,7 @@ const InfoCard = () => {
       setUserInfo(results.data);
     };
     fetchData();
+    // eslint-disable-next-line
   }, []);
 
   const renderInfo = () => {
